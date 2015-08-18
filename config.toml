@@ -1,0 +1,8 @@
+[odbc]
+connect_template = "DRIVER=$driver;SERVER=$server;DATABASE=$database;PORT=$port;UID=$user;PWD=$pass"
+driver		= "Vertica"
+server		= "????enter server address here"
+database	= "????enter database here"
+port		= 5433
+user		= "????enter user name here"
+pass		= "????enter user password here"
