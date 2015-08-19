@@ -1,0 +1,12 @@
+{
+    timestamp >= t0 - 2h, timestamp <= t0,
+    nxdomain,
+    match(domain, '^[a-z]{5}[ab][a-z][ab][a-z]?\.(biz|com|info|me|mobi|name|net|org|us)$')
+},
+{
+    [client:1h|true] >= 19,
+    [client:1h|d0='me'] >= 1,
+    [client:1h|d0='mobi'] >= 1,
+    [client:1h|d0='name'] >= 1,
+    [client:1h|d0='us'] >= 1
+}

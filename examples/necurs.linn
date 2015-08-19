@@ -1,0 +1,12 @@
+{
+    timestamp >= t0 - 2h, timestamp <= t0,
+	nxdomain,
+    match(domain, '^[a-z]{10,23}\.(ac|bit|biz|bz|cc|cn|co|com|cx|de|eu|ga|im|in|ir|jp|ki|kz|la|me|mn|ms|mu|mx|net|nf|nu|org|pro|pw|ru|sc|sh|so|su|sx|tj|to|tv|tw|ug|us|xxx)$')
+},
+{
+	[dst|true] >= 40,
+	| suffix in 'ac','bit','biz','bz','cc','cn','co','com','cx','de','eu','ga','im','in','ir','jp',
+				'ki','kz','la','me','mn','ms','mu','mx','net','nf','nu','org','pro','pw','ru','sc',
+				'sh','so','su','sx','tj','to','tv','tw','ug','us','xxx':
+	    [client|d0 = suffix] >= 1 | >= 23
+}

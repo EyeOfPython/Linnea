@@ -1,0 +1,8 @@
+{
+    timestamp >= t0 - 2h, timestamp <= t0,
+    nxdomain,
+    match(domain, '^[a-f0-9]{8}\.(com|info|net)$')
+},
+{
+    [client:1h| |suffix in 'com','info','net': [client,d1:1h|d0=suffix]>=1| >= 2 ] >= 10
+}

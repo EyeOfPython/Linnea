@@ -1,0 +1,8 @@
+{
+	timestamp >= t0 - 2h, timestamp <= t0,
+	nxdomain,
+	match(domain, '^[a-z]{4}(apontis|aulmala|berhogel|dminmont|ednog|edsafe|erhogeld|erobots|esroater|fnomosk|ierihon|moboma|musallier|nconnect|ndsontex|newnacion|rethedel|seapollo|susaname|tomvade|tvolveras)\.com$')
+},
+{
+	[client:1h|true] >= 5
+}

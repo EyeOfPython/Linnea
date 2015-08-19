@@ -1,0 +1,10 @@
+{
+    timestamp >= t0 - 2h, timestamp <= t0,
+    nxdomain,
+    match(domain, '^(www\.)?[a-z]{9,12}\.(com|in|info|kz|net)$'),
+    count(d1, '[aeiou]') / l1 > 0.35
+},
+{
+    [client:1h|true] >= 20,
+    [client:1h|d0 in 'com','in','info','net'] < [client:1h|d0='kz']
+}

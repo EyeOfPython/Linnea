@@ -1,0 +1,8 @@
+{
+    timestamp >= t0 - 2h, timestamp <= t0,
+    nxdomain,
+    match(domain, '^[a-z][a-f0-9]{33}\.(cc|cn|hk|in|so|tk|to|ws)$')
+},
+{
+    [client:1h|true] >= 5
+}

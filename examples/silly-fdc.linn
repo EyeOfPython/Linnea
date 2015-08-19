@@ -1,0 +1,9 @@
+{
+    timestamp >= t0 - 2h, timestamp <= t0,
+    nxdomain,
+    match(d1, '^(0-){13}\d\d\d?(-0){13}$'),
+	d0 = 'info'
+},
+{
+    [client:1h|true] >= 8
+}

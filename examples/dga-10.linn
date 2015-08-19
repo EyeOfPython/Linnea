@@ -1,0 +1,8 @@
+{
+    timestamp >= t0 - 2h, timestamp <= t0,
+    nxdomain,
+    match(domain, '^n\.[a-z]{9}\.ru$')
+},
+{
+    [client:1h|true] >= 20
+}

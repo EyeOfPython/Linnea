@@ -1,0 +1,8 @@
+{
+    timestamp >= t0 - 2h, timestamp <= t0,
+    nxdomain,
+    match(request, '^[a-z]([bcdfghjklmnpqrstvwxz][aeiouy]){2}(-([bcdfghjklmnpqrstvwxz][aeiouy]){2}[bcdfghjklmnpqrstvwxz]\.com|[bcdfghjklmnpqrstvwxz]-([aeiouy][bcdfghjklmnpqrstvwxz]){2}\.ru)$') 
+},
+{
+    [client:1h|true] >= 20
+}

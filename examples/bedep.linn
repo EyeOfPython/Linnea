@@ -1,0 +1,10 @@
+{
+    timestamp >= t0 - 2h, timestamp <= t0,
+    nxdomain,
+    match(domain, '^[a-z]{11,16}[a-z0-9]{2}\.com$')
+},
+{
+    [client:1h|match(d1,'[0-9]')] >= 7,
+    [client:1h|match(d1,'[0-9]')] / [dst|true] >= 0.2,
+    [client:1h|true] >= 10
+}
