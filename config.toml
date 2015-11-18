@@ -1,8 +1,47 @@
 [odbc]
 connect_template = "DRIVER=$driver;SERVER=$server;DATABASE=$database;PORT=$port;UID=$user;PWD=$pass"
-driver		= "Vertica"
-server		= "????enter server address here"
-database	= "????enter database here"
-port		= 5433
-user		= "????enter user name here"
-pass		= "????enter user password here"
+driver      = "Vertica"
+server      = "my_ip"
+database   = "my_db"
+port      = 5433
+user      = "my_user"
+pass      = "my_pass"
+
+[batch]
+days = [ '2015-08-04', '2015-08-05', '2015-08-06', '2015-08-07', '2015-08-08', '2015-08-09', '2015-08-10' 
+]
+
+hours = [
+    '01:59:59',
+    '03:59:59',
+    '05:59:59',
+    '07:59:59',
+    '09:59:59',
+    '11:59:59',
+    '13:59:59',
+    '15:59:59',
+    '17:59:59',
+    '19:59:59',
+    '21:59:59',
+    '23:59:59'
+]
+
+dgas = [
+	'bankpatch',
+    'bedep',
+    'conficker-ab',
+    'dga-10',
+    'dyre',
+    'elephant',
+    'expiro',
+    'hyphen-dga',
+    'necurs',
+    'pitou',
+    'pushdo',
+    'pykspa',
+    'ramdo',
+    'runforestrun-l2',
+    'runforestrun-waw',
+    'shiotob',
+    'silly-fdc'
+]

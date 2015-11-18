@@ -1,12 +1,22 @@
 {
     timestamp >= t0 - 2h, timestamp <= t0,
-    nxdomain,
-    match(domain, '^[a-z]{5,12}\.(biz|com|info|net|org)$')
+    nxdomain
 },
 {
-    [client:1h|true] >= 25,
+    | suffix in 'ac','bit','biz','bz','cc','cn','co','com','cx','de','eu','ga','im','in','ir','jp',
+				'ki','kz','la','me','mn','ms','mu','mx','net','nf','nu','org','pro','pw','ru','sc',
+				'sh','so','su','sx','tj','to','tv','tw','ug','us','xxx':
+	    [client|d0 = suffix] >= 1 | < 12
+},
+{
+	match(domain, '^[a-z]{5,12}\.(biz|com|info|net|org)$')
+},
+{
     |i in 5,...,12: [client:1h|l1=i]>=1| >= 5,
     |suffix in 'com','biz','info','net','org': [client:1h|d0=suffix]>=1| >= 4,
     [client:1h|l1=5 and d0 in 'com','info','net','org'] = 0,
     [client:1h|l1=12 and d0 in 'com','info','net','org'] >= 1
+},
+{
+	[client|true] >= 25
 }

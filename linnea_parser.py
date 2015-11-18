@@ -85,7 +85,9 @@ class ParseContext(object):
     def generate_name(self, unique_properties=None):
         self.debug and print('generate name', unique_properties)
         recycle = False
-        if unique_properties is not None:
+        idx = self.gen_idx
+        self.gen_idx += 1
+        """if unique_properties is not None and False:
             try:
                 idx = self.property_list.index(unique_properties)
             except:
@@ -95,7 +97,7 @@ class ParseContext(object):
                 recycle = True
         else:
             idx = len(self.property_list)
-            self.property_list.append(None)
+            self.property_list.append(None)"""
             
         return 'number_%d' % (idx), recycle
         
@@ -142,7 +144,7 @@ class BuilderSQL():
         self.layers = layers
         self.columns = columns
         self.current_layer_depth = 0
-                
+        
         self.additional_rows = self.columns - set(basis_columns.values())
         self.additional_rows_str = ', '.join(sorted(self.additional_rows))
         if self.additional_rows_str:

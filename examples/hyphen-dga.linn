@@ -5,7 +5,7 @@
 },
 {
 	[client:1h|true] >= 25,
-	[client:1h|count(d1, '-') = 1] + [client:1h|count(d1, '-') = 2] >= 20
+	[client:1h|count(d1, '-') = 1] + [client:1h|count(d1, '-') = 2] >= 20,
     [client:1h|count(d1, '-') = 1] >= 9,
     [client:1h|count(d1, '-') = 2] >= 9
 }
